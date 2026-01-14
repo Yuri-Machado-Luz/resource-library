@@ -44,11 +44,13 @@ resource-library/
 Todas as variáveis CSS do projeto:
 
 **Fontes:**
+
 - `--font-sans`: Josefin Sans (texto)
 - `--font-logo`: Changa (logo e títulos)
 - `--font-accent`: Tenor Sans (acentos)
 
 **Cores Principais:**
+
 - `--color-hex-pri`: #ff0040 (Rosa vibrante)
 - `--color-hex-sec`: #00ffff (Ciano)
 - `--color-hex-main-black`: #0c090d (Fundo)
@@ -63,6 +65,7 @@ Todas as variáveis CSS do projeto:
 Classes utilitárias customizadas:
 
 **Glass Morphism:**
+
 ```css
 .glass-card {
   backdrop-filter: blur(12px);
@@ -72,11 +75,13 @@ Classes utilitárias customizadas:
 ```
 
 **Glow Effects:**
+
 - `.glow-pri` - Brilho rosa
 - `.glow-sec` - Brilho ciano
 - `.text-glow-pri` / `.text-glow-sec` - Brilho no texto
 
 **Animações:**
+
 - `.animated-badge` - Animação de pulsação
 
 ### Mudando o Tema
@@ -86,6 +91,7 @@ Classes utilitárias customizadas:
 3. As mudanças se propagam automaticamente
 
 Exemplo (Tema Verde/Roxo):
+
 ```css
 --color-hex-pri: #00ff88;
 --color-hex-sec: #a855f7;
@@ -124,6 +130,7 @@ export default Component;
 ```
 
 **Padrões:**
+
 - `forwardRef` para permitir ref
 - Props tipadas com interface exportada
 - Função `cn()` para merge de classes Tailwind
@@ -132,11 +139,13 @@ export default Component;
 ### Button
 
 **Props:**
+
 - `variant`: 'primary' | 'secondary' | 'outline' | 'ghost'
 - `size`: 'sm' | 'md' | 'lg'
 - `glow`: boolean
 
 **Uso:**
+
 ```tsx
 import { Button } from './components/ui';
 <Button variant="primary" size="lg" glow>Clique</Button>
@@ -145,10 +154,12 @@ import { Button } from './components/ui';
 ### Card
 
 **Props:**
+
 - `glass`: boolean (glass morphism, padrão: true)
 - `glow`: 'primary' | 'secondary' | 'none'
 
 **Uso:**
+
 ```tsx
 import { Card } from './components/ui';
 <Card glass glow="primary">Conteúdo</Card>
@@ -157,10 +168,12 @@ import { Card } from './components/ui';
 ### Badge
 
 **Props:**
+
 - `variant`: 'primary' | 'secondary' | 'neutral'
 - `animated`: boolean
 
 **Uso:**
+
 ```tsx
 import { Badge } from './components/ui';
 <Badge variant="primary" animated>Beta</Badge>
@@ -169,10 +182,12 @@ import { Badge } from './components/ui';
 ### Input
 
 **Props:**
+
 - `error`: boolean
 - Props nativas de input
 
 **Uso:**
+
 ```tsx
 import { Input } from './components/ui';
 <Input placeholder="Email" error={hasError} />
@@ -181,10 +196,12 @@ import { Input } from './components/ui';
 ### Container
 
 **Props:**
+
 - `size`: 'sm' | 'md' | 'lg' | 'full'
 - `centered`: boolean (mx-auto)
 
 **Uso:**
+
 ```tsx
 import { Container } from './components/ui';
 <Container size="lg" centered>Conteúdo</Container>
@@ -207,10 +224,12 @@ Navbar fixo com navegação.
 Exibe código com botão copiar.
 
 **Props:**
+
 - `code`: string
 - `language`: string (padrão: 'tsx')
 
 **Uso:**
+
 ```tsx
 <CodePreview code={`import { Button } from './ui';`} language="tsx" />
 ```
@@ -220,12 +239,14 @@ Exibe código com botão copiar.
 Container de demonstração com tabs Preview/Code.
 
 **Props:**
+
 - `title`: string
 - `description`: string
 - `preview`: ReactNode
 - `code`: string
 
 **Uso:**
+
 ```tsx
 <ComponentDemo
   title="Button"
@@ -282,6 +303,7 @@ export default NewComponent;
 ### 3. Exportar
 
 Adicione em `src/components/ui/index.ts`:
+
 ```tsx
 export { default as NewComponent } from './NewComponent';
 export type { NewComponentProps } from './NewComponent';
@@ -290,6 +312,7 @@ export type { NewComponentProps } from './NewComponent';
 ### 4. Adicionar Demo
 
 Em `src/app/pages/Home.tsx`, adicione:
+
 ```tsx
 <ComponentDemo
   title="NewComponent"
@@ -306,11 +329,13 @@ Em `src/app/pages/Home.tsx`, adicione:
 ### Alterar Fonte
 
 1. Import no Google Fonts em `src/styles/index.css`:
+
 ```css
 @import url('https://fonts.googleapis.com/css2?family=SuaFonte&display=swap');
 ```
 
-2. Altere em `src/styles/theme.css`:
+1. Altere em `src/styles/theme.css`:
+
 ```css
 --font-sans: 'SuaFonte', sans-serif;
 ```
@@ -318,11 +343,13 @@ Em `src/app/pages/Home.tsx`, adicione:
 ### Adicionar Tamanho de Texto
 
 Em `src/styles/theme.css`:
+
 ```css
 --text-10xl: clamp(8rem, 8rem + 5vw, 12rem);
 ```
 
 Uso:
+
 ```tsx
 <h1 className="text-[length:var(--text-10xl)]">Título</h1>
 ```
@@ -330,6 +357,7 @@ Uso:
 ### Nova Variante de Botão
 
 Em `src/components/ui/Button.tsx`:
+
 ```tsx
 const variants = {
   // ... existentes
@@ -338,6 +366,7 @@ const variants = {
 ```
 
 Atualize tipo:
+
 ```tsx
 variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
 ```
@@ -349,16 +378,19 @@ variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
 ### Imagens
 
 1. Coloque em `public/assets/`:
+
 ```
 public/assets/logo.png
 ```
 
-2. Use:
+1. Use:
+
 ```tsx
 <img src={import.meta.env.DEV ? '/assets/logo.png' : '/resource-library/assets/logo.png'} alt="Logo" />
 ```
 
 Ou melhor, crie um helper:
+
 ```tsx
 // src/lib/utils.ts
 export const asset = (path: string) => {
@@ -373,18 +405,20 @@ export const asset = (path: string) => {
 ### Ícones
 
 Usa **Lucide React**:
+
 ```tsx
 import { IconName } from 'lucide-react';
 <IconName size={24} color="var(--hex-pri)" />
 ```
 
-Catálogo: https://lucide.dev
+Catálogo: <https://lucide.dev>
 
 ### Fontes Locais
 
 1. Coloque em `public/assets/fonts/CustomFont.woff2`
 
 2. Declare em `src/styles/theme.css`:
+
 ```css
 @font-face {
   font-family: 'CustomFont';
@@ -394,7 +428,8 @@ Catálogo: https://lucide.dev
 }
 ```
 
-3. Use:
+1. Use:
+
 ```css
 --font-custom: 'CustomFont', sans-serif;
 ```
@@ -436,11 +471,13 @@ npm run preview
 ### Deploy Automático
 
 Instale pacote:
+
 ```bash
 npm install --save-dev gh-pages
 ```
 
 Adicione script em `package.json`:
+
 ```json
 "scripts": {
   "deploy": "npm run build && gh-pages -d dist"
@@ -448,6 +485,7 @@ Adicione script em `package.json`:
 ```
 
 Deploy:
+
 ```bash
 npm run deploy
 ```
@@ -465,6 +503,7 @@ npm run deploy
 ### Fontes não carregam
 
 Certifique-se do import em `src/styles/index.css`:
+
 ```css
 @import url('https://fonts.googleapis.com/css2?family=...');
 ```
@@ -472,6 +511,7 @@ Certifique-se do import em `src/styles/index.css`:
 ### Build falha
 
 Execute linter:
+
 ```bash
 npm run lint:fix
 ```
@@ -479,6 +519,7 @@ npm run lint:fix
 ### Erro de path modules
 
 Não há path aliases. Use imports relativos:
+
 ```tsx
 // ✅ Correto
 import { Button } from '../../components/ui';
