@@ -9,6 +9,7 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
     </div>
