@@ -1,0 +1,75 @@
+@layer components {
+  .glass-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(26, 26, 26, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    background: rgba(26, 26, 26, 0.75);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .glow-pri {
+    box-shadow: 0 0 20px 5px rgba(255, 0, 64, 0.2);
+  }
+
+  .glow-sec {
+    box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.2);
+  }
+
+  .text-glow-pri {
+    text-shadow: 0 0 10px rgba(255, 0, 64, 0.5);
+  }
+
+  .text-glow-sec {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+
+  .animated-badge {
+    will-change: transform, box-shadow;
+    animation: badgeAnimate 4s infinite alternate-reverse;
+  }
+
+  @keyframes badgeAnimate {
+    0% {
+      transform: scale(0.98);
+      box-shadow: 0 0 7px 2px rgba(247, 2, 96, 0.444);
+    }
+    100% {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px 5px rgba(247, 2, 96, 0.644);
+    }
+  }
+
+  .code-block {
+    background: rgba(12, 9, 13, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-main-black);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--hex-pri) 0%, var(--hex-sec) 100%);
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background-color: rgba(255, 0, 64, 0.3);
+    color: var(--hex-main-white);
+  }
+}

@@ -1,0 +1,86 @@
+@theme {
+  /* Typography */
+  --font-sans: 'Josefin Sans', sans-serif;
+  --font-logo: 'Changa', sans-serif;
+  --font-accent: 'Tenor Sans', sans-serif;
+
+  /* Colors - Primary (Pink/Red) */
+  --color-pri: oklch(63.212% 0.25419 20.836);
+  --color-pri-light: oklab(65.644% 0.2286 0.05413);
+  --color-pri-dark: oklch(53.453% 0.21478 20.317);
+  --color-pri-red: oklch(53.212% 0.25419 20.836);
+
+  /* Colors - Secondary (Cyan/Turquoise) */
+  --color-sec: oklch(90.541% 0.15458 194.807);
+  --color-sec-dull: oklch(81.524% 0.13717 172.396);
+  --color-sec-dark: oklch(27.865% 0.04745 172.487);
+
+  /* Colors - Neutrals */
+  --color-main-white: oklch(96.535% 0.00247 167.521);
+  --color-main-gray: oklch(21.779% 0.00002 271.152);
+  --color-main-black: oklch(14.57% 0.00996 317.651);
+
+  /* Hex fallbacks */
+  --color-hex-pri: #ff0040;
+  --color-hex-pri-light: #ff3366;
+  --color-hex-pri-dark: #cc0033;
+  --color-hex-pri-red: #d90020;
+
+  --color-hex-sec: #00ffff;
+  --color-hex-sec-dull: #49dfb9;
+  --color-hex-sec-dark: #083026;
+
+  --color-hex-main-white: #f2f4f3;
+  --color-hex-main-gray: #1a1a1a;
+  --color-hex-main-black: #0c090d;
+
+  /* Typography Scale */
+  --text-xxs: clamp(0.5rem, 0.5rem + 0.1vw, 0.75rem);
+  --text-xs: clamp(0.625rem, 0.625rem + 0.15vw, 0.875rem);
+  --text-sm: clamp(0.75rem, 0.75rem + 0.2vw, 1rem);
+  --text-base: clamp(0.875rem, 0.875rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1rem, 1rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.125rem, 1.125rem + 0.35vw, 1.375rem);
+  --text-2xl: clamp(1.25rem, 1.25rem + 0.5vw, 1.75rem);
+  --text-3xl: clamp(1.75rem, 1.75rem + 0.8vw, 2rem);
+  --text-4xl: clamp(2rem, 2rem + 1vw, 2.5rem);
+  --text-5xl: clamp(2.5rem, 2.5rem + 1.5vw, 3.5rem);
+  --text-6xl: clamp(3rem, 3rem + 2vw, 4.5rem);
+}
+
+:root {
+  --hex-pri: #ff0040;
+  --hex-pri-light: #ff3366;
+  --hex-pri-dark: #cc0033;
+  --hex-sec: #00ffff;
+  --hex-sec-dull: #49dfb9;
+  --hex-sec-dark: #083026;
+  --hex-main-white: #f2f4f3;
+  --hex-main-gray: #1a1a1a;
+  --hex-main-black: #0c090d;
+}
+
+@layer base {
+  html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-main-black);
+    color: var(--color-main-white);
+    line-height: 1.6;
+  }
+
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+}
