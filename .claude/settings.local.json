@@ -2,10 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(git init:*)",
+<<<<<<< HEAD
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Yuma UI Component Library\n\n- Biblioteca de componentes React com tema dark cyberpunk\n- 5 componentes base: Button, Card, Badge, Input, Container\n- Sistema de tema baseado no portfolio\n- Site de documentação com preview de código\n- Configurado para GitHub Pages\n- Stack: React 18, TypeScript, Tailwind CSS v4, Vite 6\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(gh repo create:*)",
       "Bash(npm run build:*)"
+=======
+      "Bash(git add:*)"
+>>>>>>> origin/master
     ]
   }
 }

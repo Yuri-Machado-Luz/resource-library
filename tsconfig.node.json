@@ -12,6 +12,10 @@
     "moduleDetection": "force",
     "noEmit": true,
 
+<<<<<<< HEAD
+=======
+    "composite": true,
+>>>>>>> origin/master
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

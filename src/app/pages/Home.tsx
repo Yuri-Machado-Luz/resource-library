@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import React from 'react';
+>>>>>>> origin/master
 import { Button, Card, Badge, Input, Container } from '../../components/ui';
 import ComponentDemo from '../../components/website/ComponentDemo';
 import { Github, Sparkles } from 'lucide-react';

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import React from 'react';
+>>>>>>> origin/master
 import { Routes, Route } from 'react-router-dom';
 import Header from '../components/website/Header';
 import Home from './pages/Home';
