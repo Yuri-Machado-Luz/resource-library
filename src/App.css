@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Tenor+Sans&display=swap");
+@import "./styles/index.css";
+@import "tailwindcss";
+
+/* App specific styles */
+
+#root {
+  background: var(--color-main-black);
+  color: var(--color-main-white);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: "Josefin Sans", sans-serif;
+  gap: 4rem;
+}
