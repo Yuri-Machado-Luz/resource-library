@@ -1,11 +1,11 @@
 export { Badges } from "./Badges/Badge.component";
 export type * from "./Badges/Badge.types";
 
-export { useGlow, GLOW_PRESETS, COLOR_VARS, SCALE_PRESETS } from "./Glow";
+export { COLOR_VARS, GLOW_PRESETS, SCALE_PRESETS, useGlow } from "./Glow";
 export type {
-  UseGlowOptions,
-  GlowMode,
-  GlowIntensities,
   GlowConfig,
+  GlowIntensities,
+  GlowMode,
   GlowResult,
+  UseGlowOptions,
 } from "./Glow";
