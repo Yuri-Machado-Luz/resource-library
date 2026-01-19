@@ -1,5 +1,8 @@
 {
   "printWidth": 80,
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss"
+  ],
   "singleAttributePerLine": true
 }
